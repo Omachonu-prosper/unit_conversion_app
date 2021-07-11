@@ -1,5 +1,5 @@
 // imports 
-import {arrange} from './modules/page_layout.js'
+import arrange from './modules/page_layout.js';
 
 // App variables
 const  root = document.querySelector('#root');

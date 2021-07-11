@@ -57,3 +57,25 @@ section {
     border-bottom: var(--custom-border); 
     padding: 1rem;
 }
+
+footer {
+    width: 100%;
+    background-color: var(--grey);
+    padding: 2rem;
+}
+
+.copyright-text {
+    text-align: center;
+}
+
+.copyright-text a {
+    color: var(--primary-color);
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: .3rem;
+    border-radius: 3px;
+}
+
+.copyright-text a:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
