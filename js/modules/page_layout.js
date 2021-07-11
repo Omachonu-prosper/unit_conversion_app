@@ -2,7 +2,7 @@ class Elements {
     constructor () {
         this.nav = `
             <div class="nav">
-                <div class="brand">Unit Converter</div>
+                <h1 class="brand">Unit Converter</h1>
             </div>
         `; 
     }
