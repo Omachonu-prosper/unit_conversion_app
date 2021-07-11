@@ -9,9 +9,10 @@ class Elements {
             <section>
                 <div class="container">
                     <h2 class="unit-title">
-                        ${unitName}
-                        <span>
-                            (${originalUnit} to ${convertingUnit})
+                        ${unitName} (${originalUnit} to ${convertingUnit})
+
+                        <span class="primary-drop-down">
+                            <i class="fa fa-angle-down"></i>
                         </span>
                     </h2>
                 </div>

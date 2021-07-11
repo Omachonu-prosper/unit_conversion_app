@@ -7,6 +7,7 @@
 /* root variables  */
 :root {
     --primary-color: #0d0d25;
+    --primary-color-light: rgba(13, 13, 37, 0.341);
     --black: #000;
     --white: #fff;
     --white-2: #f7f7f9;
@@ -56,8 +57,29 @@ section {
     font-weight: 600;
     border-bottom: var(--custom-border); 
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 
+.primary-drop-down {
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary-color-light);
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.primary-drop-down svg {
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 55%;
+    left: 50%;
+    color: #fff;
+}
+
+/* footer  */
 footer {
     width: 100%;
     background-color: var(--grey);
