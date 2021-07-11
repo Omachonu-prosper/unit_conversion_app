@@ -56,7 +56,7 @@ class Elements {
 function pageLoadElements() {
     const date = new Date();
     const currentYear = date.getFullYear();
-    const elements = new Elements( 'Width', 'meter', 'centimeter', currentYear.toString() )
+    const elements = new Elements( 'Length', 'meter', 'centimeter', currentYear.toString() )
    
     return `
         ${elements.nav}
