@@ -15,6 +15,30 @@ class Elements {
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </h2>
+
+                    <div class="conversion-box">
+                        <div class="top">
+                            <div class="unit" id="originalUnit">
+                                <div class="secondary-drop-down">
+                                    <i class="fa fa-angle-down"></i>
+                                
+                                    ${originalUnit}
+                                </div>
+
+                                <input type="number" id="unitValue">
+                            </div>
+                            to
+                            <div class="unit" id="convertingUnit">
+                                <div class="secondary-drop-down">
+                                    <i class="fa fa-angle-down"></i>
+
+                                    ${convertingUnit}
+                                </div>
+                                
+                                <div class="output"> 0.00 </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         `;
