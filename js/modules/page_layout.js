@@ -9,11 +9,13 @@ class Elements {
             <section>
                 <div class="container">
                     <h2 class="unit-title">
-                        ${unitName} (${originalUnit} to ${convertingUnit})
+                        <p> ${unitName} (${originalUnit} to ${convertingUnit}) </p>
 
-                        <span class="primary-drop-down">
+                        <span class="primary-drop-down" id="pDDButton">
                             <i class="fa fa-angle-down"></i>
                         </span>
+                        
+                        <div class="primary-drop-down-box" id="pDDBox"></div>
                     </h2>
 
                     <div class="conversion-box">

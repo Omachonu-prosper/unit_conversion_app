@@ -8,6 +8,7 @@
 :root {
     --primary-color: #0d0d25;
     --primary-color-light: rgba(13, 13, 37, 0.341);
+    --primary-color-light-2: rgba(13, 13, 37, 0.905);
     --black: #000;
     --white: #fff;
     --white-2: #f7f7f9;
@@ -22,6 +23,27 @@ html {
 
 body {
     background-color: var(--white-2);
+}
+
+/* animations  */
+@keyframes primary-dropdown-animate-in {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+/* animations  */
+@keyframes primary-dropdown-animate-out {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0%;
+    }
 }
 
 /* nav bar and its related styles  */
@@ -59,6 +81,17 @@ section {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    position: relative
+}
+
+.primary-drop-down-box  {
+    width: 100%;
+    background-color: var(--primary-color-light-2);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); 
+    animation-duration: .6s;
 }
 
 .conversion-box {
@@ -97,6 +130,8 @@ input#unitValue:hover  {
     border-radius: 5px;
 }
 
+/* dropdown styles 
+primary dropdown */
 .primary-drop-down {
     margin-right: 1rem;
     width: 2rem;
@@ -105,6 +140,7 @@ input#unitValue:hover  {
     border-radius: 100%;
     cursor: pointer;
     color: var(--white);
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .primary-drop-down svg {
@@ -115,6 +151,24 @@ input#unitValue:hover  {
     left: 50%;
 }
 
+.rotate {
+    transform: rotate(-180deg);
+    background-color: var(--primary-color);
+}
+
+.dropdown-list li {
+    list-style: none;
+    color: var(--white);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.dropdown-list li:hover {
+    color: var(--grey);
+    background-color: var(--primary-color)
+}
+
+/* secondary dropdown  */
 .secondary-drop-down {
     background-color: var(--primary-color-light);
     padding: .3rem .5rem;
