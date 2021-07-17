@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A unit conversion app",
   "main": "js/app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +14,6 @@
   "author": "Omachonu Prosper <omachonuCodes@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "convert-units": "^2.3.4"
+    "unit-converter": "^1.1.0"
   }
 }
