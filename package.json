@@ -1,0 +1,18 @@
+{
+  "name": "unit_converter",
+  "version": "1.0.0",
+  "description": "A unit conversion app",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "unit",
+    "conversion"
+  ],
+  "author": "Omachonu Prosper <omachonuCodes@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "convert-units": "^2.3.4"
+  }
+}
