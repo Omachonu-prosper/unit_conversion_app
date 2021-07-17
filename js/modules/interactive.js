@@ -1,31 +1,65 @@
 class Interactivity {
     constructor() {
         this.pDD = document.querySelector('#pDDBox'); // pDD stands for primary drop down
+
         this.pDDButton = document.querySelector('#pDDButton');
-        this.pDDElements = `
-            <ul class="dropdown-list">
-                <li data-category="length">Length</li>
-                <li data-category="weight">Weight</li>
-                <li data-category="time">Time</li>
-            </ul>
-        `;
+        
+        this.unitData = [
+            {
+                "name": "Length",
+                "SIUnit": "meter",
+                "subUnits": ["millimeter", "centimeter", "meter"],
+                "abbr": ["mm", "cm", "m"]
+            },
+            {
+                "name": "Weight",
+                "SIUnit": "gram",
+                "subUnits": ["milligram", "gram", "Kilogram"],
+                "abbr": ["mg", "g", "kg"]
+            },
+            {
+                "name": "Temperature",
+                "SIUnit": "kelvin",
+                "subUnits": ["celsius", "kelvin", "fahrenheit"],
+                "abbr": ["C", "K", "F"]
+            },
+            {
+                "name": "Time",
+                "SIUnit": "second",
+                "subUnits": ["second", "minute", "hour"],
+                "abbr": ["s", "min", "h"]   
+            }
+        ]
+
+        this.pDDElements = () => {
+            let output = '';
+            
+            this.unitData.forEach( (unit, index) => {
+                output += `
+                    <li data-id="${index}">${unit.name}</li>
+                `
+            });
+
+            return `
+                <ul class="dropdown-list">${output}</ul>
+            `
+        };
     }
 
-    togglePrimaryDropDown() {
-        const self =  new Interactivity();       
-        if( self.pDD.innerHTML ) { // if the dropdown box already has contents 
-            self.pDD.style.animationName = 'primary-dropdown-animate-out';
-            self.pDDButton.classList.remove('rotate');
-            self.pDD.innerHTML = ''; // empty the dropdown
+    togglePrimaryDropDown(data) {
+        const parent =  new Interactivity();
+
+        if( parent.pDD.innerHTML ) { // if the dropdown box already has contents 
+            parent.pDD.style.animationName = 'primary-dropdown-animate-out';
+            parent.pDDButton.classList.remove('rotate');
+            parent.pDD.innerHTML = ''; // empty the dropdown
 
         } else {
-            self.pDD.innerHTML = self.pDDElements
-            self.pDD.style.animationName = 'primary-dropdown-animate-in';
-            self.pDDButton.classList.add('rotate');
+            parent.pDD.innerHTML = parent.pDDElements();
+            parent.pDD.style.animationName = 'primary-dropdown-animate-in';
+            parent.pDDButton.classList.add('rotate');
         }
     }
 }
 
-let interactivity = new Interactivity();
-
-export default interactivity = interactivity;
+export default Interactivity = new Interactivity();

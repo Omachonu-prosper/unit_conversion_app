@@ -1,6 +1,6 @@
 // imports 
 import arrange from './modules/page_layout.js';
-import interactivity from './modules/interactive.js';
+import Interactivity from './modules/interactive.js';
 
 // App variables
 const  root = document.querySelector('#root');
@@ -10,5 +10,5 @@ root.innerHTML = arrange;
 
 // event listeners 
 const EventCtrl = ( () => {
-    document.querySelector('#pDDButton').addEventListener( 'click', interactivity.togglePrimaryDropDown );
-})()
+    document.querySelector('#pDDButton').addEventListener( 'click', Interactivity.togglePrimaryDropDown );
+})();
