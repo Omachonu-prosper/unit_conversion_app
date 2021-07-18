@@ -21,21 +21,17 @@ class Elements {
                     <div class="conversion-box">
                         <div class="top">
                             <div class="unit" id="originalUnit">
-                                <div class="secondary-drop-down" id="sDDBox-1">
-                                    <i class="fa fa-angle-down"></i>
-                                
-                                    <span id="sDD-1"></span>
-                                </div>
+                                    <select id="s1">
+
+                                    </select>
 
                                 <input type="number" id="unitValue">
                             </div>
                             to
                             <div class="unit" id="convertingUnit">
-                                <div class="secondary-drop-down" id="sDDBox-2">
-                                    <i class="fa fa-angle-down"></i>
-
-                                    <span id="sDD-2"></span>
-                                </div>
+                                    <select id="s2">
+                                        
+                                    </select>
                                 
                                 <div class="output"> 0.00 </div>
                             </div>

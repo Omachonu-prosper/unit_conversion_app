@@ -5,11 +5,9 @@ class Interactivity {
         this.pDD = document.querySelector('#pDDBox'); // pDD stands for primary drop down
         this.pDDButton = document.querySelector('#pDDButton');
 
-        // secondary dropdown 
-        this.sDD1 = document.querySelector('#sDD-1');
-        this.sDD2 = document.querySelector('#sDD-2');
-        this.sDDBox1 = document.querySelector('#sDDBox-1');
-        this.sDDBox2 = document.querySelector('#sDDBox-2');
+        // select1 and select2(s1 & s2) 
+        this.s1 = document.querySelector('#s1');
+        this.s2 = document.querySelector('#s2');
         
         this.unitData = [
             {
@@ -47,38 +45,52 @@ class Interactivity {
                 <ul class="dropdown-list">${output}</ul>
             `
         };
+
+        this.selectOptions = (i, select) => {
+            let output = '';
+            
+            this.unitData[i].abbr.forEach( ( abb, index) => {
+                // if the option we wish to select is same as the index 
+                if( select === index ) {
+                    output += `
+                        <option value="${index}" selected>${ abb }</option>
+                    `;
+                } else {
+                    output += `
+                        <option value="${index}">${ abb }</option>
+                    `;
+                }
+            });
+
+            return `${output}`;
+        };
     }
 
-    changeUnitElement( arrIndex, convertingTo, convertingFrom ) {
+    changeUnitElement( arrIndex, select1, select2 ) {
         const parent = new Interactivity;
         
         // change the unit name 
         parent.unitName.innerHTML = parent.unitData[arrIndex].name;
 
-        // change the secondary dropdowns inner Html
-        parent.sDD1.innerHTML = parent.unitData[arrIndex].abbr[convertingTo];
-        parent.sDD2.innerHTML = parent.unitData[arrIndex].abbr[convertingFrom];
-
-        // add the abbreviations(abbr) to data-abbr
-        parent.sDD1.dataset.abbr = parent.unitData[arrIndex].abbr[convertingTo];
-        parent.sDD2.dataset.abbr = parent.unitData[arrIndex].abbr[convertingFrom];
+        // change the select options 
+        parent.s1.innerHTML = parent.selectOptions(arrIndex, select1);
+        parent.s2.innerHTML = parent.selectOptions(arrIndex, select2);
 
     };
 
     pageLoadContent() {
         const parent =  new Interactivity();
 
-        // manipulate the units in html
-        parent.changeUnitElement(0, 2, 1);
-
+        // manipulate the units in html select
+        parent.changeUnitElement(0, 1, 2);
     };
 
     changeUnit(e) {
         const parent =  new Interactivity();
         const target = e.target;
         
-        // manipulate the units in html
-        parent.changeUnitElement( target.dataset.id, 2, 1);
+        // manipulate the units in html select
+        parent.changeUnitElement(target.dataset.id, 1, 2);
 
         // close up the primary dropdown 
         parent.togglePrimaryDropDown();
@@ -99,11 +111,6 @@ class Interactivity {
             parent.pDDButton.classList.add('rotate');
         }
     };
-
-    toggleSecondaryDropDown() {
-
-    };
-
 }
 
 export default Interactivity = new Interactivity();
