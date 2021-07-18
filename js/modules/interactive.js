@@ -15,25 +15,21 @@ class Interactivity {
             {
                 "name": "Length",
                 "SIUnit": "meter",
-                "subUnits": ["millimeter", "centimeter", "meter"],
                 "abbr": ["mm", "cm", "m"]
             },
             {
                 "name": "Weight",
                 "SIUnit": "gram",
-                "subUnits": ["milligram", "gram", "Kilogram"],
                 "abbr": ["mg", "g", "kg"]
             },
             {
                 "name": "Temperature",
                 "SIUnit": "kelvin",
-                "subUnits": ["celsius", "kelvin", "fahrenheit"],
                 "abbr": ["C", "K", "F"]
             },
             {
                 "name": "Time",
                 "SIUnit": "second",
-                "subUnits": ["second", "minute", "hour"],
                 "abbr": ["s", "min", "h"]   
             }
         ]
@@ -53,15 +49,27 @@ class Interactivity {
         };
     }
 
+    changeUnitElement( arrIndex, convertingTo, convertingFrom ) {
+        const parent = new Interactivity;
+        
+        // change the unit name 
+        parent.unitName.innerHTML = parent.unitData[arrIndex].name;
+
+        // change the secondary dropdowns inner Html
+        parent.sDD1.innerHTML = parent.unitData[arrIndex].abbr[convertingTo];
+        parent.sDD2.innerHTML = parent.unitData[arrIndex].abbr[convertingFrom];
+
+        // add the abbreviations(abbr) to data-abbr
+        parent.sDD1.dataset.abbr = parent.unitData[arrIndex].abbr[convertingTo];
+        parent.sDD2.dataset.abbr = parent.unitData[arrIndex].abbr[convertingFrom];
+
+    };
+
     pageLoadContent() {
         const parent =  new Interactivity();
 
-        // the default unit category is length
-        parent.unitName.innerHTML = parent.unitData[0].name;
-
-        // the default converting units are meter and centimeter 
-        parent.sDD1.innerHTML = parent.unitData[0].subUnits[2];
-        parent.sDD2.innerHTML = parent.unitData[0].subUnits[1];
+        // manipulate the units in html
+        parent.changeUnitElement(0, 2, 1);
 
     };
 
@@ -69,12 +77,8 @@ class Interactivity {
         const parent =  new Interactivity();
         const target = e.target;
         
-        // change the unit name 
-        parent.unitName.innerHTML = target.textContent;
-
-        // change the secondary dropdowns inner Html
-        parent.sDD1.innerHTML = parent.unitData[target.dataset.id].subUnits[2];
-        parent.sDD2.innerHTML = parent.unitData[target.dataset.id].subUnits[1];
+        // manipulate the units in html
+        parent.changeUnitElement( target.dataset.id, 2, 1);
 
         // close up the primary dropdown 
         parent.togglePrimaryDropDown();
