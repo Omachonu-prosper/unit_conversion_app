@@ -169,18 +169,22 @@ primary dropdown */
 }
 
 /* secondary dropdown  */
-.secondary-drop-down {
+.select {
     background-color: var(--primary-color-light);
     padding: .3rem .5rem;
     text-align: center;
-    max-width: 7rem;
     color: var(--white);
     cursor: pointer;
+    border-radius: 3px;
+    border: none; 
 }
 
 .primary-drop-down:hover, 
-.secondary-drop-down:hover {
+.select:hover,
+.select:focus,
+.select option:hover {
     background-color: var(--primary-color);
+    outline: var(--primary-color)
 }
 
 /* footer  */

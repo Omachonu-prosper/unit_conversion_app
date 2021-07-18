@@ -21,7 +21,7 @@ class Elements {
                     <div class="conversion-box">
                         <div class="top">
                             <div class="unit" id="originalUnit">
-                                    <select id="s1">
+                                    <select class="select" id="s1">
 
                                     </select>
 
@@ -29,7 +29,7 @@ class Elements {
                             </div>
                             to
                             <div class="unit" id="convertingUnit">
-                                    <select id="s2">
+                                    <select class="select" id="s2">
                                         
                                     </select>
                                 
