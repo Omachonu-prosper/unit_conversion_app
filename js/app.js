@@ -10,5 +10,9 @@ root.innerHTML = arrange;
 
 // event listeners 
 const EventCtrl = ( () => {
+    // on page load fill in the values for unit-name and secondary drop down content 
+    document.addEventListener( 'DOMContentLoaded', Interactivity.pageLoadContent )
+
+    // listen for a click to toggle the primary dropdown 
     document.querySelector('#pDDButton').addEventListener( 'click', Interactivity.togglePrimaryDropDown );
 })();

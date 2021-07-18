@@ -1,8 +1,15 @@
 class Interactivity {
     constructor() {
-        this.pDD = document.querySelector('#pDDBox'); // pDD stands for primary drop down
+        this.unitName = document.querySelector('#unit-name');
 
+        this.pDD = document.querySelector('#pDDBox'); // pDD stands for primary drop down
         this.pDDButton = document.querySelector('#pDDButton');
+
+        // secondary dropdown 
+        this.sDD1 = document.querySelector('#sDD-1');
+        this.sDD2 = document.querySelector('#sDD-2');
+        this.sDDBox1 = document.querySelector('#sDDBox-1');
+        this.sDDBox2 = document.querySelector('#sDDBox-2');
         
         this.unitData = [
             {
@@ -46,7 +53,19 @@ class Interactivity {
         };
     }
 
-    togglePrimaryDropDown(data) {
+    pageLoadContent() {
+        const parent =  new Interactivity();
+
+        // the default unit category is length
+        parent.unitName.innerHTML = parent.unitData[0].name;
+
+        // the default converting units are meter and centimeter 
+        parent.sDD1.innerHTML = parent.unitData[0].subUnits[2];
+        parent.sDD2.innerHTML = parent.unitData[0].subUnits[1];
+
+    }
+
+    togglePrimaryDropDown() {
         const parent =  new Interactivity();
 
         if( parent.pDD.innerHTML ) { // if the dropdown box already has contents 
@@ -59,7 +78,12 @@ class Interactivity {
             parent.pDD.style.animationName = 'primary-dropdown-animate-in';
             parent.pDDButton.classList.add('rotate');
         }
-    }
+    };
+
+    toggleSecondaryDropDown() {
+
+    };
+
 }
 
 export default Interactivity = new Interactivity();
