@@ -63,7 +63,23 @@ class Interactivity {
         parent.sDD1.innerHTML = parent.unitData[0].subUnits[2];
         parent.sDD2.innerHTML = parent.unitData[0].subUnits[1];
 
-    }
+    };
+
+    changeUnit(e) {
+        const parent =  new Interactivity();
+        const target = e.target;
+        
+        // change the unit name 
+        parent.unitName.innerHTML = target.textContent;
+
+        // change the secondary dropdowns inner Html
+        parent.sDD1.innerHTML = parent.unitData[target.dataset.id].subUnits[2];
+        parent.sDD2.innerHTML = parent.unitData[target.dataset.id].subUnits[1];
+
+        // close up the primary dropdown 
+        parent.togglePrimaryDropDown();
+        
+    };
 
     togglePrimaryDropDown() {
         const parent =  new Interactivity();
