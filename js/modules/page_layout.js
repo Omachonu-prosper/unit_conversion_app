@@ -1,5 +1,5 @@
 class Elements {
-    constructor (unitName, originalUnit, convertingUnit, year) {
+    constructor ( year ) {
         this.nav = `
             <div class="nav">
                 <h1 class="brand">Unit Converter</h1>
@@ -9,7 +9,7 @@ class Elements {
             <section>
                 <div class="container">
                     <h2 class="unit-title">
-                        <p> ${unitName} (${originalUnit} to ${convertingUnit}) </p>
+                        <p id="unit-name"></p>
 
                         <span class="primary-drop-down" id="pDDButton">
                             <i class="fa fa-angle-down"></i>
@@ -21,21 +21,17 @@ class Elements {
                     <div class="conversion-box">
                         <div class="top">
                             <div class="unit" id="originalUnit">
-                                <div class="secondary-drop-down">
-                                    <i class="fa fa-angle-down"></i>
-                                
-                                    ${originalUnit}
-                                </div>
+                                    <select class="select" id="s1">
+
+                                    </select>
 
                                 <input type="number" id="unitValue">
                             </div>
                             to
                             <div class="unit" id="convertingUnit">
-                                <div class="secondary-drop-down">
-                                    <i class="fa fa-angle-down"></i>
-
-                                    ${convertingUnit}
-                                </div>
+                                    <select class="select" id="s2">
+                                        
+                                    </select>
                                 
                                 <div class="output"> 0.00 </div>
                             </div>
@@ -58,7 +54,7 @@ class Elements {
 function pageLoadElements() {
     const date = new Date();
     const currentYear = date.getFullYear();
-    const elements = new Elements( 'Length', 'meter', 'centimeter', currentYear.toString() )
+    const elements = new Elements( currentYear.toString() )
    
     return `
         ${elements.nav}
