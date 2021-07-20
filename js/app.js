@@ -61,5 +61,9 @@ const EventCtrl = ( () => {
     document.querySelector('#pDDButton').addEventListener( 'click', Interactivity.togglePrimaryDropDown );
 
     // listen for when a user types in the input(#unitValue);
-    document.querySelector('#unitValue').addEventListener('keyup', AppFunctions.convert)
+    document.querySelector('#unitValue').addEventListener('keyup', AppFunctions.convert);
+
+    // once a selector(and its outputs) is/are clicked it is assumed that the user might have changed the converting to or from unit so we would convert and output to correspond to the supposed change 
+    document.querySelector('#s1').addEventListener('click', AppFunctions.convert);
+    document.querySelector('#s2').addEventListener('click', AppFunctions.convert);
 })();

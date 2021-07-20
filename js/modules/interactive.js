@@ -8,6 +8,11 @@ class Interactivity {
         // select1 and select2(s1 & s2) 
         this.s1 = document.querySelector('#s1');
         this.s2 = document.querySelector('#s2');
+
+        // the input 
+        this.input = document.querySelector('#unitValue');
+        // output 
+        this.output = document.querySelector('.output');
         
         this.unitData = [
             {
@@ -94,6 +99,9 @@ class Interactivity {
 
         // close up the primary dropdown 
         parent.togglePrimaryDropDown();
+
+        // empty the input and set the output to 0
+        parent.emptyInputandOutput()
         
     };
 
@@ -111,6 +119,16 @@ class Interactivity {
             parent.pDDButton.classList.add('rotate');
         }
     };
+
+    emptyInputandOutput() {
+        const parent = new Interactivity();
+
+        // empty the input 
+        parent.input.value = '';
+
+        // set the output to 0.00
+        parent.output.innerHTML = '0.00'
+    }
 }
 
 export default Interactivity = new Interactivity();
