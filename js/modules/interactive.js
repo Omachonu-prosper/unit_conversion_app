@@ -50,14 +50,14 @@ class Interactivity {
             let output = '';
             
             this.unitData[i].abbr.forEach( ( abb, index) => {
-                // if the option we wish to select is same as the index 
+                // if the option we wish to select is same as the index add the selected attribute to it 
                 if( select === index ) {
                     output += `
-                        <option value="${index}" selected>${ abb }</option>
+                        <option value="${abb}" selected>${ abb }</option>
                     `;
                 } else {
                     output += `
-                        <option value="${index}">${ abb }</option>
+                        <option value="${abb}">${ abb }</option>
                     `;
                 }
             });
