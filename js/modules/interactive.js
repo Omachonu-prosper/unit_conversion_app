@@ -16,12 +16,12 @@ class Interactivity {
                 "abbr": ["mm", "cm", "m"]
             },
             {
-                "name": "Weight",
+                "name": "Weight / Mass",
                 "SIUnit": "gram",
                 "abbr": ["mg", "g", "kg"]
             },
             {
-                "name": "Temperature",
+                "name": "Temperature (Beta - values may not be accurate)",
                 "SIUnit": "kelvin",
                 "abbr": ["C", "K", "F"]
             },
