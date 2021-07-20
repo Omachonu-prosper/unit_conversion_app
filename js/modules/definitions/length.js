@@ -1,6 +1,6 @@
 var convertLength = (value, from, to) => {
     // this is a reference from which all conversions are made
-    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for length
+    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for length ie: (how many milimeters will make a meter)
     const acceptedUnits = [
         {
             abbr: 'mm',

@@ -1,18 +1,18 @@
-var convertWeight = (value, from, to) => {
+var convertTime = (value, from, to) => {
     // this is a reference from which all conversions are made
-    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for Weight ie: (how many killograms will make a gram)
+    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for Time. ie: (how many minutes will make a second)
     const acceptedUnits = [
         {
-            abbr: 'mg',
-            fromSi: 1000
-        },
-        {
-            abbr: 'g',
+            abbr: 's',
             fromSi: 1
         },
         {
-            abbr: 'kg',
-            fromSi: 0.001
+            abbr: 'min',
+            fromSi: 0.0166666666666667
+        },
+        {
+            abbr: 'h',
+            fromSi: 0.0002777777777777778
         }
     ];
 
@@ -35,4 +35,4 @@ var convertWeight = (value, from, to) => {
     return result;
 }
 
-export default convertWeight = convertWeight;
+export default convertTime = convertTime;

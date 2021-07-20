@@ -1,13 +1,15 @@
 // imports 
 import convertLength from './modules/definitions/length.js';
 import convertWeight from './modules/definitions/weight.js';
+import convertTime from './modules/definitions/time.js';
 import arrange from './modules/page_layout.js';
 import Interactivity from './modules/interactive.js';
 
 // App variables
 const  root = document.querySelector('#root');
-console.log( convertLength(1, 'cm', 'm') );
-console.log( convertWeight(1, 'mg', 'g') );
+console.log( convertLength(1, 'mm', 'cm') );
+console.log( convertWeight(1, 'kg', 'g') );
+console.log( convertTime(1, 's', 'min') );
 
 // set the innerHTML of the root element to the value returned from arrange 
 root.innerHTML = arrange;
