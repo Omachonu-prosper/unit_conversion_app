@@ -1,18 +1,18 @@
-var convertLength = (value, from, to) => {
+var convertWeight = (value, from, to) => {
     // this is a reference from which all conversions are made
-    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for length
+    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for Weight
     const acceptedUnits = [
         {
-            abbr: 'mm',
+            abbr: 'mg',
             fromSi: 1000
         },
         {
-            abbr: 'cm',
-            fromSi: 100
+            abbr: 'g',
+            fromSi: 1
         },
         {
-            abbr: 'm',
-            fromSi: 1
+            abbr: 'kg',
+            fromSi: 0.001
         }
     ];
 
@@ -35,4 +35,4 @@ var convertLength = (value, from, to) => {
     return result;
 }
 
-export default convertLength = convertLength;
+export default convertWeight = convertWeight;
