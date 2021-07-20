@@ -86,7 +86,7 @@ section {
 
 .primary-drop-down-box  {
     width: 100%;
-    background-color: var(--primary-color-light-2);
+    background-color: var(--black);
     position: absolute;
     left: 0;
     top: 100%;
