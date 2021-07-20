@@ -21,7 +21,7 @@ class Interactivity {
                 "abbr": ["mg", "g", "kg"]
             },
             {
-                "name": "Temperature (Beta - values may not be accurate)",
+                "name": "Temperature (Beta)",
                 "SIUnit": "kelvin",
                 "abbr": ["C", "K", "F"]
             },

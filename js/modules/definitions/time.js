@@ -1,6 +1,6 @@
 var convertTime = (value, from, to) => {
     // this is a reference from which all conversions are made
-    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for Time. ie: (how many minutes will make a second)
+    // The acceptedUnits.fromSi is the value of the unit in comparism to the Standard International(SI) unit for Time. ie: (how many seconds will make a minute)
     const acceptedUnits = [
         {
             abbr: 's',
@@ -8,11 +8,11 @@ var convertTime = (value, from, to) => {
         },
         {
             abbr: 'min',
-            fromSi: 0.0166666666666667
+            fromSi: 60
         },
         {
             abbr: 'h',
-            fromSi: 0.0002777777777777778
+            fromSi: 3600
         }
     ];
 
@@ -30,7 +30,8 @@ var convertTime = (value, from, to) => {
         }
     });
 
-    const result = value / from * to;
+    // the opposite compared to other conversions 
+    const result = value / to * from;
 
     return result;
 }

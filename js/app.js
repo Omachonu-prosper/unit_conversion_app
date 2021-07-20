@@ -12,6 +12,43 @@ const  root = document.querySelector('#root');
 // set the innerHTML of the root element to the value returned from arrange 
 root.innerHTML = arrange;
 
+const AppFunctions = ( () => {
+    // decide which conversion to call 
+    function decideConversion(category, value, from, to) {
+        let result;
+        
+        // set up a switch to regulate which function gets called according to the category 
+        switch (category) {
+            case 'length': result = convertLength(value, from, to);
+            break;
+            case 'weight': result = convertWeight(value, from, to);
+            break;
+            case 'time': result = convertTime(value, from, to);
+            break;
+            default: result = convertTemperature(value, from, to);
+            break;
+        }
+
+        return result;
+    }
+    
+    return{
+        convert: () => {
+            // the Number form ot the value inputed by the user
+            const value = Number(document.querySelector('#unitValue').value);
+            const category = document.querySelector('#unit-name').textContent.toLowerCase();
+            // the select1's selected options value
+            const from = document.querySelector('#s1').selectedOptions[0].value;
+            // the select2's selected options value
+            const to = document.querySelector('#s2').selectedOptions[0].value;
+            const outputElement = document.querySelector('.output');
+            
+            // Send the answer to the user
+            value === 0 ? outputElement.innerHTML = '0.00' : outputElement.innerHTML =  decideConversion(category, value, from, to);
+        }
+    }
+})();
+
 // event listeners 
 const EventCtrl = ( () => {
     // on page load fill in the values for unit-name and secondary drop down content 
@@ -22,4 +59,7 @@ const EventCtrl = ( () => {
 
     // listen for a click to toggle the primary dropdown 
     document.querySelector('#pDDButton').addEventListener( 'click', Interactivity.togglePrimaryDropDown );
+
+    // listen for when a user types in the input(#unitValue);
+    document.querySelector('#unitValue').addEventListener('keyup', AppFunctions.convert)
 })();
