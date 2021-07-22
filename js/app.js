@@ -4,7 +4,7 @@ import convertWeight from './modules/definitions/weight.js';
 import convertTime from './modules/definitions/time.js';
 import convertTemperature from './modules/definitions/temperature.js';
 import arrange from './modules/page_layout.js';
-import Interactivity from './modules/interactive.js';
+import Interactive from './modules/interactive.js';
 
 // App variables
 const  root = document.querySelector('#root');
@@ -52,13 +52,13 @@ const AppFunctions = ( () => {
 // event listeners 
 const EventCtrl = ( () => {
     // on page load fill in the values for unit-title and secondary drop down content 
-    document.addEventListener( 'DOMContentLoaded', Interactivity.pageLoadContent );
+    document.addEventListener( 'DOMContentLoaded', Interactive.pageLoadContent );
 
     // click on the units to change from one unit to another 
-    document.querySelector('#pDDBox').addEventListener( 'click', Interactivity.changeUnit )
+    document.querySelector('#pDDBox').addEventListener( 'click', Interactive.changeUnit )
 
     // listen for a click to toggle the primary dropdown 
-    document.querySelector('#pDDButton').addEventListener( 'click', Interactivity.togglePrimaryDropDown );
+    document.querySelector('#pDDButton').addEventListener( 'click', Interactive.togglePrimaryDropDown );
 
     // listen for when a user types in the input(#unitValue);
     document.querySelector('#unitValue').addEventListener('keyup', AppFunctions.convert);
