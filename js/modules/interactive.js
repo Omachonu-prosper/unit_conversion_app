@@ -106,15 +106,20 @@ class Interactivity {
         const parent =  new Interactivity();
         const target = e.target;
         
-        // manipulate the units in html select
-        parent.changeUnitElement(target.dataset.id, 1, 2);
+        // the unit we are changing to is same as the one already there, dont touch the values
+        if( target.dataset.id === parent.unitTitle.dataset.id ) {
+            // close up the primary dropdown 
+            parent.togglePrimaryDropDown();
+        } else {
+            // manipulate the units in html select
+            parent.changeUnitElement(target.dataset.id, 1, 2);
 
-        // close up the primary dropdown 
-        parent.togglePrimaryDropDown();
+            // close up the primary dropdown 
+            parent.togglePrimaryDropDown();
 
-        // empty the input and set the output to 0
-        parent.emptyInputandOutput()
-        
+            // empty the input and set the output to 0
+            parent.emptyInputandOutput()
+        }
     };
 
     togglePrimaryDropDown() {
