@@ -1,4 +1,4 @@
-class Interactivity {
+class ApplicationController {
     constructor() {
         this.unitTitle = document.querySelector('#unit-title');
 
@@ -105,47 +105,47 @@ class Interactivity {
 var Interactive = ( () => {
     // bring down or take up the primary dropdown 
     function togglePrimaryDropDown() {
-        const interactivity =  new Interactivity();
+        const applicationController =  new ApplicationController();
 
-        if( interactivity.pDD.innerHTML ) { // if the dropdown box already has contents 
-            interactivity.pDD.style.animationName = 'primary-dropdown-animate-out';
-            interactivity.pDDButton.classList.remove('rotate');
-            interactivity.pDD.innerHTML = ''; // empty the dropdown
+        if( applicationController.pDD.innerHTML ) { // if the dropdown box already has contents 
+            applicationController.pDD.style.animationName = 'primary-dropdown-animate-out';
+            applicationController.pDDButton.classList.remove('rotate');
+            applicationController.pDD.innerHTML = ''; // empty the dropdown
 
         } else {
-            interactivity.pDD.innerHTML = interactivity.pDDElements();
-            interactivity.pDD.style.animationName = 'primary-dropdown-animate-in';
-            interactivity.pDDButton.classList.add('rotate');
+            applicationController.pDD.innerHTML = applicationController.pDDElements();
+            applicationController.pDD.style.animationName = 'primary-dropdown-animate-in';
+            applicationController.pDDButton.classList.add('rotate');
         }
     };
 
     // change from one unit to another
     function changeUnit(e) {
-        const interactivity =  new Interactivity();
+        const applicationController =  new ApplicationController();
         const target = e.target;
 
         // the unit we are changing to is same as the one already there, dont touch the values
-        if( target.dataset.id === interactivity.unitTitle.dataset.id ) {
+        if( target.dataset.id === applicationController.unitTitle.dataset.id ) {
             // close up the primary dropdown 
             togglePrimaryDropDown();
         } else {
             // manipulate the units in html select
-            interactivity.changeUnitElement(target.dataset.id, 1, 2);
+            applicationController.changeUnitElement(target.dataset.id, 1, 2);
 
             // close up the primary dropdown 
             togglePrimaryDropDown();
 
             // empty the input and set the output to 0
-            interactivity.emptyInputandOutput();
+            applicationController.emptyInputandOutput();
         }
     };
     
     return {        
         pageLoadContent: () => {
-            const interactivity =  new Interactivity();
+            const applicationController =  new ApplicationController();
     
             // manipulate the units in html select
-            interactivity.changeUnitElement(0, 1, 2);
+            applicationController.changeUnitElement(0, 1, 2);
         },
 
         togglePrimaryDropDown: () => {
