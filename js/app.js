@@ -60,8 +60,9 @@ const EventCtrl = ( () => {
     // listen for a click to toggle the primary dropdown 
     document.querySelector('#pDDButton').addEventListener( 'click', Interactive.togglePrimaryDropDown );
 
-    // listen for when a user types in the input(#unitValue);
+    // listen for when a user types/changes the value of the input(#unitValue);
     document.querySelector('#unitValue').addEventListener('keyup', AppFunctions.convert);
+    document.querySelector('#unitValue').addEventListener('change', AppFunctions.convert);
 
     // once a selector(and its outputs) is/are clicked it is assumed that the user might have changed the converting to or from unit so we would convert and output to correspond to the supposed change 
     document.querySelector('#s1').addEventListener('click', AppFunctions.convert);
