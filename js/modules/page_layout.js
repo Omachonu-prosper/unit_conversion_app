@@ -43,7 +43,7 @@ class Elements {
         this.footer = `
             <footer>
                 <p class="copyright-text">
-                    Made with love by <a href="https://github.com/Omachonu-prosper">Omachonu Prosper</a> &copy; ${year} 
+                    Made with love by <a href="https://github.com/Omachonu-prosper" target="_blank">Omachonu Prosper</a> &copy; ${year} 
                 </p>
             </footer>
         `;
@@ -54,7 +54,7 @@ class Elements {
 function pageLoadElements() {
     const date = new Date();
     const currentYear = date.getFullYear();
-    const elements = new Elements( currentYear.toString() )
+    const elements = new Elements( currentYear.toString() );
    
     return `
         ${elements.nav}
