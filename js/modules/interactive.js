@@ -1,6 +1,6 @@
 class Interactivity {
     constructor() {
-        this.unitName = document.querySelector('#unit-name');
+        this.unitTitle = document.querySelector('#unit-title');
 
         this.pDD = document.querySelector('#pDDBox'); // pDD stands for primary drop down
         this.pDDButton = document.querySelector('#pDDButton');
@@ -16,22 +16,30 @@ class Interactivity {
         
         this.unitData = [
             {
-                "name": "Length",
+                // title will be used for the element's content in html while the name is for in app reference 
+                "title": "Length",
+                "name": "length",
                 "SIUnit": "meter",
                 "abbr": ["mm", "cm", "m"]
             },
             {
-                "name": "Weight / Mass",
+                // title will be used for the element's content in html while the name is for in app reference 
+                "title": "Weight / Mass",
+                "name": "weight",
                 "SIUnit": "gram",
                 "abbr": ["mg", "g", "kg"]
             },
             {
-                "name": "Temperature (Beta)",
+                // title will be used for the element's content in html while the name is for in app reference 
+                "title": "Temperature (Beta)",
+                "name": "temperature",
                 "SIUnit": "kelvin",
                 "abbr": ["C", "K", "F"]
             },
             {
-                "name": "Time",
+                // title will be used for the element's content in html while the name is for in app reference 
+                "title": "Time",
+                "name": "time",
                 "SIUnit": "second",
                 "abbr": ["s", "min", "h"]   
             }
@@ -42,12 +50,12 @@ class Interactivity {
             
             this.unitData.forEach( (unit, index) => {
                 output += `
-                    <li data-id="${index}">${unit.name}</li>
+                    <li data-name="${ unit.name }" data-id="${ index }">${ unit.title }</li>
                 `
             });
 
             return `
-                <ul class="dropdown-list">${output}</ul>
+                <ul class="dropdown-list">${  output  }</ul>
             `
         };
 
@@ -58,24 +66,28 @@ class Interactivity {
                 // if the option we wish to select is same as the index add the selected attribute to it 
                 if( select === index ) {
                     output += `
-                        <option value="${abb}" selected>${ abb }</option>
+                        <option value="${ abb }" selected>${ abb }</option>
                     `;
                 } else {
                     output += `
-                        <option value="${abb}">${ abb }</option>
+                        <option value="${ abb }">${ abb }</option>
                     `;
                 }
             });
 
-            return `${output}`;
+            return `${ output }`;
         };
     }
 
     changeUnitElement( arrIndex, select1, select2 ) {
         const parent = new Interactivity;
         
-        // change the unit name 
-        parent.unitName.innerHTML = parent.unitData[arrIndex].name;
+        // change the unit Title 
+        parent.unitTitle.innerHTML = parent.unitData[arrIndex].title;
+        // change the data-name 
+        parent.unitTitle.dataset.name = parent.unitData[arrIndex].name;
+        // change the data-id 
+        parent.unitTitle.dataset.id = arrIndex;
 
         // change the select options 
         parent.s1.innerHTML = parent.selectOptions(arrIndex, select1);

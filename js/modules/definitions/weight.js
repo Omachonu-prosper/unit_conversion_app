@@ -12,7 +12,7 @@ var convertWeight = (value, from, to) => {
         },
         {
             abbr: 'kg',
-            fromSi: 0.001
+            fromSi: 0.001 // same as 1/1000
         }
     ];
 
@@ -24,9 +24,9 @@ var convertWeight = (value, from, to) => {
     // loop through the acceptedUnits setting the apropriate unit to its fromSi value 
     acceptedUnits.forEach( unit => {
         if( unit.abbr === from ) {
-            from = unit.fromSi
+            from = unit.fromSi;            
         } else if( unit.abbr === to ) {
-            to = unit.fromSi
+            to = unit.fromSi;
         }
     });
 

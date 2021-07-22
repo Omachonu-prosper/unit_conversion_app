@@ -9,7 +9,7 @@ class Elements {
             <section>
                 <div class="container">
                     <h2 class="unit-title">
-                        <p id="unit-name"></p>
+                        <p id="unit-title"></p>
 
                         <span class="primary-drop-down" id="pDDButton">
                             <i class="fa fa-angle-down"></i>

@@ -36,7 +36,7 @@ const AppFunctions = ( () => {
         convert: () => {
             // the Number form ot the value inputed by the user
             const value = Number(document.querySelector('#unitValue').value);
-            const category = document.querySelector('#unit-name').textContent.toLowerCase();
+            const category = document.querySelector('#unit-title').dataset.name;
             // the select1's selected options value
             const from = document.querySelector('#s1').selectedOptions[0].value;
             // the select2's selected options value
@@ -51,7 +51,7 @@ const AppFunctions = ( () => {
 
 // event listeners 
 const EventCtrl = ( () => {
-    // on page load fill in the values for unit-name and secondary drop down content 
+    // on page load fill in the values for unit-title and secondary drop down content 
     document.addEventListener( 'DOMContentLoaded', Interactivity.pageLoadContent );
 
     // click on the units to change from one unit to another 
