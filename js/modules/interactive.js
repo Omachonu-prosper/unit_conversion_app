@@ -111,7 +111,6 @@ var Interactive = ( () => {
             applicationController.pDD.style.animationName = 'primary-dropdown-animate-out';
             applicationController.pDDButton.classList.remove('rotate');
             applicationController.pDD.innerHTML = ''; // empty the dropdown
-
         } else {
             applicationController.pDD.innerHTML = applicationController.pDDElements();
             applicationController.pDD.style.animationName = 'primary-dropdown-animate-in';
@@ -124,16 +123,10 @@ var Interactive = ( () => {
         const applicationController =  new ApplicationController();
         const target = e.target;
 
-        // the unit we are changing to is same as the one already there, dont touch the values
-        if( target.dataset.id === applicationController.unitTitle.dataset.id ) {
-            // close up the primary dropdown 
-            togglePrimaryDropDown();
-        } else {
+        // the unit we are changing to is not same as the one already there. Empty the input and output values
+        if( target.dataset.id !== applicationController.unitTitle.dataset.id ) {
             // manipulate the units in html select
             applicationController.changeUnitElement(target.dataset.id, 1, 2);
-
-            // close up the primary dropdown 
-            togglePrimaryDropDown();
 
             // empty the input and set the output to 0
             applicationController.emptyInputandOutput();
