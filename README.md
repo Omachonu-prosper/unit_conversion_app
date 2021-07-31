@@ -1,7 +1,7 @@
 # Unit Converter
 
 ## About
-This is a unit converting web app capable of converting differient units( length, weight time and temperature )
+This is a unit converting web app capable of converting different units( length, weight time and temperature )
 
 ## Supported Units
 For now the app can only carry out convertions in the units listed bellow. We are looking foward to adding new units so you can convert your values from any unit to the unit of your choice. The units abbreviations (abbr) are also placed beside them. You might also want to read about Beta units to know more about conversion accuracy.
